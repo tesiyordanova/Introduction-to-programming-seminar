@@ -1,71 +1,112 @@
-// задача две 
+zadacha 1.
+
 #include <iostream>
 using namespace std;
-
-int main()
+int main() 
 {
-	int first, second, third;
-	cout << "Write three numbers!"<<endl;
-	cin >> first>> second>> third;
-	int max=0;
-	if (first>second&&first>third)
-	{
-		max = max +first;
-	}
-	else
-	{
-		if (second > first && second > third)
-		{
-
-			max = second;
-		}
-		else
-		{
-			if (third > first && third > second)
-			{
-				max = first;
-				if (second > first)
-				{
-					max = third;
-				}
-			}
-		}
-	}
-	
-	
-	cout << "Max:"<< max;
-  return 0;
+	int n;
+   	cout <<"Month No : ";
+   	cin >> n;
+   	switch(n)
+   	{
+		case 1:
+      			cout <<"January";
+      			break;
+		case 2:
+      			cout <<"February";
+      			break;
+		case 3:
+      			cout <<"March";
+      			break;
+		case 4:
+     			cout <<"April";
+      			break;
+		case 5:
+      			cout <<"May";
+      			break;
+		case 6:
+      			cout <<"June";
+      			break;
+		case 7:
+      			cout <<"July";
+      			break;
+		case 8:
+      			cout <<"August";
+      			break;
+		case 9:
+      			cout <<"September";
+      			break;
+		case 10:
+      			cout <<"October";
+      			break;
+		case 11:
+      			cout <<"November";
+      			break;
+		case 12:
+      			cout <<"December";
+      			break;
+		default:
+      			cout <<"Invalid Month number\nPlease try again ....\n";
+      			break;
+    	}
+        return 0;
 }
 
-//задача 3
+zadacha 2.
 
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    int a,b,c;
-    cout << "Write three numbers!" << endl;
-    cin >> a >> b >> c;
-    if (a<b+c&&b<a+c&&c<a+b)
+    double a, b, c;
+    cout << "Enter coefficients of quadratic equation!"<< endl;
+        cin >> a>>b>>c;
+        double d = b * b - 4 * a * c;
+        if (a==0)
+        {
+            cout << " Not a quadratic equation!";
+        }
+         else if (d==0)
+         {
+
+              cout << (-b) / (2 * a);
+         }
+          else if (d>=0)
+          {
+             double x1 = (-b + sqrt(d)) / (2 * a);
+              double x2 = (-b - sqrt(d)) / (2 * a);
+              cout << "x1:"<< x1 <<" x2:" << x2;
+          }
+          else if (d<0)
+          {
+              cout << " No roots to this equation!";
+          }
+        return 0;
+}
+
+zadacha 3.
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a, n;
+    cout << "Enter a number and  and an exponent"<<endl;
+    cin >> a >> n;
+    int result = 1;
+    if (n==0)
     {
-        cout << "Exist!";
-        if (a == b == c)
-        {
-            cout << " Equilateral!";
-        }
-        else if (a != b && b != c&&a!=c)
-        {
-            cout << "Scalence!";
-        }
-        else
-        {
-            cout << "Isosceles!";
-        }
+        result = 1;
     }
     else
     {
-        cout << "Write corect numbers!";
+        for (int i = 1; i <= n; i++)
+        {
+
+            result = result * a;
+        }
     }
-    return 0;
+    cout << result;
 }
